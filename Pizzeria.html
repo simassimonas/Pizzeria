@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <script type="text/javascript" src="helperFunctions.js"></script>
+    <script type="text/javascript" src="form.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+    <title>Pizzeria</title>
+  </head>
+  <body onload="refreshMenu()">
+    <div class="main">
+      <div class="logo">Pizzeria</div>
+      <div class="addPizzaForm">
+        <div class="blockHeader">
+          <h1>ADD PIZZA</h1>
+        </div>
+        <form id="addPizzaFormElement" onsubmit="addPizza(); return false">
+          <div class="formItem">
+            <label for="name" class="namesFont">Name</label>
+            <input
+              type="text"
+              maxlength="30"
+              class="addPizzaInput"
+              id="name"
+              name="name"
+              oninput="this.setCustomValidity('')"
+              required
+            />
+          </div>
+          <div class="formItem">
+            <label for="price" class="namesFont">Price</label>
+            <input
+              type="number"
+              min="0"
+              step=".01"
+              class="addPizzaInput"
+              id="price"
+              name="price"
+              required
+            />
+          </div>
+          <div class="formItem">
+            <label for="heat" class="namesFont">Heat</label>
+            <select id="heat" name="heat" class="addPizzaInput">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="formItem photo">
+            <div class="namesFont">Photo</div>
+            <div id="pizzaPhotosInForm">
+              <label class="pizzaPhotosInForm">
+                <input
+                  type="radio"
+                  name="pizzaPhotoInForm"
+                  value="./resources/blank.png"
+                  checked
+                />
+                <img
+                  src="./resources/nophoto.png"
+                  alt="blank"
+                  class="pizzaPhotoInForm"
+                />
+              </label>
+
+              <label class="pizzaPhotosInForm">
+                <input
+                  type="radio"
+                  name="pizzaPhotoInForm"
+                  value="./resources/pizza1.png"
+                />
+                <img
+                  src="./resources/pizza1.png"
+                  alt="pizza1"
+                  class="pizzaPhotoInForm"
+                />
+              </label>
+
+              <label class="pizzaPhotosInForm">
+                <input
+                  type="radio"
+                  name="pizzaPhotoInForm"
+                  value="./resources/pizza2.png"
+                />
+                <img
+                  src="./resources/pizza2.png"
+                  alt="pizza2"
+                  class="pizzaPhotoInForm"
+                />
+              </label>
+
+              <label class="pizzaPhotosInForm">
+                <input
+                  type="radio"
+                  name="pizzaPhotoInForm"
+                  value="./resources/pizza3.png"
+                />
+                <img
+                  src="./resources/pizza3.png"
+                  alt="pizza3"
+                  class="pizzaPhotoInForm"
+                />
+              </label>
+
+              <label class="pizzaPhotosInForm">
+                <input
+                  type="radio"
+                  name="pizzaPhotoInForm"
+                  value="./resources/pizza4.png"
+                />
+                <img
+                  src="./resources/pizza4.png"
+                  alt="pizza4"
+                  class="pizzaPhotoInForm"
+                />
+              </label>
+            </div>
+          </div>
+          <div class="formItem formToppings">
+            <label for="toppingsParent" class="namesFont">Toppings</label>
+            <div id="formToppingsParentInput" class="formToppingsParentInput">
+              <input
+                type="text"
+                minlength="2"
+                maxlength="30"
+                class="addPizzaInput"
+                id="toppingsParent"
+                name="toppingsInput"
+                required
+              />
+              <button
+                class="plusButton"
+                onclick="createFormToppingsChildInputElement()"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <input
+            type="submit"
+            value="Add pizza"
+            class="submitButton pricesFont"
+          />
+        </form>
+      </div>
+      <div id="menu" class="menu">
+        <div class="blockHeader">
+          <h1>MENU</h1>
+        </div>
+        <div class="formItem">
+          <select
+            id="sort"
+            name="sort"
+            class="addPizzaInput"
+            onchange="refreshMenu()"
+          >
+            <option value="sortPizzasByName" selected>sort by name</option>
+            <option value="sortPizzasByPrice">sort by price</option>
+            <option value="sortPizzasByHeat">sort by heat</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

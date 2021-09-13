@@ -1,0 +1,66 @@
+body {
+  background-color: #403d3c;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #f2ecdb;
+}
+
+.namesFont {
+  color: #f2a30f;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.pricesFont {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #fea90e;
+  font-size: 50px;
+}
+
+.blockHeader {
+  text-align: center;
+}
+
+.alignSelfRight {
+  align-self: flex-end;
+}
+
+.plusButton {
+  color: #f2ecdb;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  background-color: #f27830;
+  border: none;
+}
+
+.plusButton:hover {
+  background-color: #f28c0f;
+  border-color: #deb522;
+}
+
+.minusButton {
+  color: #f2ecdb;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #f27830;
+  border: none;
+}
+
+.minusButton:hover {
+  background-color: #f28c0f;
+  border-color: #deb522;
+}
