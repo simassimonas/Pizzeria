@@ -4,4 +4,4 @@
 
 # Task
 
-![Task](/resources/task.png)
+![Task](/resources/task.PNG)
